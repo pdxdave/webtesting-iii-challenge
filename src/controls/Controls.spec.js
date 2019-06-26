@@ -15,9 +15,9 @@ describe('<Controls', () => {
 
     it('this will toggle the close gate to the open gate position', () => {
         const gateControl = jest.fn(); // listens for an event trigger
-        const { getByText } = render(<Controls locked={false} closed={false} toggleClosed={gateControl}/>);
+        const { getByText } = render(<Controls locked={false} closed={false} toggleClosed={gateControl}/>); // locked, closed, and toggleClosed come from Controls.js
         const button = getByText(/close gate/i); // Looking for a button with this name
-        fireEvent.click(button);
+        fireEvent.click(button); // button event is triggered here
         expect(gateControl).toHaveBeenCalled(); // Use .toHaveBeenCalled to ensure that a mock function got called.
     });
 
