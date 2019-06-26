@@ -8,7 +8,7 @@ import Controls from './Controls';
 
 // Important Notes
 // Keep in mind the diff b/t toHaveBeenCalled and toHaveBeenCalledTimes
-// I also included a word doc with a visual of how each setting is
+// I also included a word doc with a visual of how each setting is outlined
 
 
 describe('<Controls', () => {
@@ -37,7 +37,7 @@ describe('<Controls', () => {
         expect(gateControl).toHaveBeenCalledTimes(1); //Use .toHaveBeenCalledTimes to ensure that a mock function got called exact number of times.
     });
 
-    it('this will toggle the lock gate to the unlock gate position', () => {
+    it('this will toggle the unlock gate to the lock gate position', () => {
         const gateControl = jest.fn(); // listens for an event trigger
         const { getByText } = render(<Controls locked={true} closed={true} toggleClosed={gateControl} toggleLocked={gateControl}/>);
         const button = getByText(/unlock gate/i);
